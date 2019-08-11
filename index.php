@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CRUD de productos con PHP - MySQL - jQuery AJAX </title>
+<title>DELL </title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,14 +20,12 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-						<h2>Administrar <b>Productos</b></h2>
+						<h2>Participantes</h2>
 					</div>
-					<div class="col-sm-6">
-						<a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar nuevo producto</span></a>
-					</div>
+					
                 </div>
             </div>
-			<div class='col-sm-4 pull-right'>
+			<!-- <div class='col-sm-4 pull-right'>
 				<div id="custom-search-input">
                             <div class="input-group col-md-12">
                                 <input type="text" class="form-control" placeholder="Buscar"  id="q" onkeyup="load(1);" />
@@ -38,7 +36,7 @@
                                 </span>
                             </div>
                 </div>
-			</div>
+			</div> -->
 			<div class='clearfix'></div>
 			<hr>
 			<div id="loader"></div><!-- Carga de datos ajax aqui -->

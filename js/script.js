@@ -83,14 +83,21 @@
 						$("#resultados").html("Enviando...");
 					  },
 					success: function(datos){
-					$("#resultados").html(datos);
-					load(1);
-					$('#addProductModal').modal('hide');
+					
+					jQuery('#modalMessage').modal({
+						  show:'true',
+					}); 	
+					
 				  }
 			});
 		  event.preventDefault();
 		});
 		
+		$("#modalMessage").on("hidden.bs.modal", function () {
+
+			window.location.reload();
+		});
+
 		$( "#delete_product" ).submit(function( event ) {
 		  var parametros = $(this).serialize();
 			$.ajax({

@@ -1,0 +1,108 @@
+html{
+	background-color: #000000;
+}
+body{
+	background: transparent;
+}
+.container {
+    
+    background: transparent;
+}
+.pantalla img{
+	width: 100%;
+}
+
+img{
+  max-width: 100%;
+}
+.uno div{
+    margin: 0px auto 27px auto;
+    float: initial;
+}
+
+.nombre input,.edad input,.mail input{
+     width: 100%;
+    margin:53px 0px 19px 11px;
+    font-size: 38px;
+    background-color: transparent;
+    border: 0px;
+    color: #ffffff;
+}
+.tablet > .col-md-12:first-child{
+      padding: 0px;
+}
+.velocidad input{
+  width: 100%;
+        margin: 59px 0px 11px 11px;
+    font-size: 104px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 0px;
+    text-align: center;
+    color: #ffffff;
+}
+.guarda input{
+      background-color: #007fbc;
+    border: 0px;
+    font-size: 34px;
+}
+#modalMessage{
+  text-align: center;
+}
+.nombre{
+  background-image: url(../img/nombre.png);
+  background-size: cover;
+}
+.edad{
+  background-image: url(../img/edad.png);
+  background-size: cover;
+}
+.mail{
+  background-image: url(../img/mail.png);
+  background-size: cover;
+}
+.velocidad{
+  background-image: url(../img/velocidad.png);
+  background-size: cover;
+}
+.vertical-center{
+	  min-height: 100%;  /* Fallback for vh unit */
+  min-height: 100vh; /* You might also want to use
+                        'height' property instead.
+                        
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+  
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
+
+  /* Make it a flex container */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+  
+  /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+  -webkit-align-items : center;
+       -moz-box-align : center;
+       -ms-flex-align : center;
+          align-items : center;
+  
+  /* In legacy web browsers such as Firefox 9
+     we need to specify the width of the flex container */
+  width: 100%;
+  
+  /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+  
+     Therefore, we should use the following declarations to get it centered again */
+         -webkit-box-pack : center;
+            -moz-box-pack : center;
+            -ms-flex-pack : center;
+  -webkit-justify-content : center;
+          justify-content : center;
+}

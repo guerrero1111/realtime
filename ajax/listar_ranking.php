@@ -11,7 +11,7 @@ if($action == 'ajax'){
 	$tables="tblprod";
 	$campos="*";
 	$sWhere=" tblprod.prod_name LIKE '%".$query."%'";
-	$sWhere.=" order by tblprod.prod_qty DESC";
+	$sWhere.=" order by tblprod.prod_qty DESC ";
 	
 	
 	include 'pagination.php'; //include pagination file
@@ -25,8 +25,8 @@ if($action == 'ajax'){
 	if ($row= mysqli_fetch_array($count_query)){$numrows = $row['numrows'];}
 	else {echo mysqli_error($con);}
 	$total_pages = ceil($numrows/$per_page);
-	//main query to fetch the data
-	$query = mysqli_query($con,"SELECT $campos FROM  $tables where $sWhere LIMIT 10");
+	//main query to fetch the 5
+	$query = mysqli_query($con,"SELECT $campos FROM  $tables where $sWhere LIMIT 5");
 	//loop through fetched data
 	
 
@@ -36,43 +36,37 @@ if($action == 'ajax'){
 	if ($numrows>0){
 		
 	?>
-		<div class="table-responsive">
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th class='text-center'>Código</th>
-						<th>Producto </th>
-						<th>Categoría </th>
-						<th class='text-center'>Stock</th>
-						<th class='text-right'>Precio</th>
-						
-					</tr>
-				</thead>
-				<tbody>	
+		
 						<?php 
+						$i = 1;
 						$finales=0;
 						while($row = mysqli_fetch_array($query)){	
 							$product_id=$row['id'];
 							$prod_code=$row['prod_code'];
 							$prod_name=$row['prod_name'];
 							$prod_ctry=$row['prod_ctry'];
-							$prod_qty=$row['prod_qty'];
-							$price=$row['price'];						
+							$prod_qty=$row['prod_qty'];				
 							$finales++;
 						?>	
-						<tr class="<?php echo $text_class;?>">
-							<td class='text-center'><?php echo $prod_code;?></td>
-							<td ><?php echo $prod_name;?></td>
-							<td ><?php echo $prod_ctry;?></td>
-							<td class='text-center' ><?php echo $prod_qty;?></td>
-							<td class='text-right'><?php echo number_format($price,2);?></td>
-							
-						</tr>
-						<?php }?>
+
+						<div class="col-md-push-2 col-md-8 uno">
+				        	<div class="col-md-2 numero">
+				                <span><?php echo $i;?></span>
+				            </div>
+				            <div class="col-md-7">
+				                <span><?php echo $prod_code;?></span>
+				            </div> 
+				            <div class="col-md-3">
+				                <span><?php echo $prod_qty;?> Km/h</span>
+				            </div>
+				        </div>
+
 						
-				</tbody>			
-			</table>
-		</div>	
+						<?php 
+						$i=$i + 1;
+					}?>
+						
+				
 
 	
 	

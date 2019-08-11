@@ -1,6 +1,3 @@
-<?php
-header("Refresh:5");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,37 +11,33 @@ header("Refresh:5");
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="css/pantalla.css">
 </head>
 <body>
+<div class="row vertical-center">
+    <div class="container pantalla my-auto">
 
-   <!--  <div class="container">
-        <div class="table-wrapper">
-           
-			
-			<div class='clearfix'></div>
-			<hr>
-			<div id="loader"></div>
-			<div id="resultados"></div>
-			<div class='outer_div2'></div>
-            
-			
+        <div class="col-md-push-2 col-md-8 uno">
+        	<div class="col-md-2">
+                <span>1</span>
+            </div>
+            <div class="col-md-7">
+                <span>Adrian Guerrero</span>
+            </div> 
+            <div class="col-md-3">
+                <span>45 Km/h</span>
+            </div>
         </div>
-    </div> -->
-    <div class="row vertical-center">
-    	<div class="container pantalla my-auto outer_div2">
-
-
+        
+        
+			
+        
     </div>
 	
 
 </div>
-	<!-- Edit Modal HTML -->
-	<?php include("html/modal_add.php");?>
-	<!-- Edit Modal HTML -->
-	<?php include("html/modal_edit.php");?>
-	<!-- Delete Modal HTML -->
-	<?php include("html/modal_delete.php");?>
+
 	<script src="js/script.js"></script>
 </body>
 </html>                                		                            

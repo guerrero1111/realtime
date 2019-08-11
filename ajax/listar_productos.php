@@ -11,7 +11,7 @@ if($action == 'ajax'){
 	$tables="tblprod";
 	$campos="*";
 	$sWhere=" tblprod.prod_name LIKE '%".$query."%'";
-	$sWhere.=" order by tblprod.prod_name";
+	$sWhere.=" order by tblprod.prod_qty DESC";
 	
 	
 	include 'pagination.php'; //include pagination file
@@ -40,12 +40,11 @@ if($action == 'ajax'){
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr>
-						<th class='text-center'>Código</th>
-						<th>Producto </th>
-						<th>Categoría </th>
-						<th class='text-center'>Stock</th>
-						<th class='text-right'>Precio</th>
-						<th></th>
+						<th class='text-center'>Nombre</th>
+						<th>Edad </th>
+						<th>Mail </th>
+						<th class='text-center'>Velocidad</th>
+					
 					</tr>
 				</thead>
 				<tbody>	
@@ -56,8 +55,7 @@ if($action == 'ajax'){
 							$prod_code=$row['prod_code'];
 							$prod_name=$row['prod_name'];
 							$prod_ctry=$row['prod_ctry'];
-							$prod_qty=$row['prod_qty'];
-							$price=$row['price'];						
+							$prod_qty=$row['prod_qty'];				
 							$finales++;
 						?>	
 						<tr class="<?php echo $text_class;?>">
@@ -65,11 +63,7 @@ if($action == 'ajax'){
 							<td ><?php echo $prod_name;?></td>
 							<td ><?php echo $prod_ctry;?></td>
 							<td class='text-center' ><?php echo $prod_qty;?></td>
-							<td class='text-right'><?php echo number_format($price,2);?></td>
-							<td>
-								<a href="#"  data-target="#editProductModal" class="edit" data-toggle="modal" data-code='<?php echo $prod_code;?>' data-name="<?php echo $prod_name?>" data-category="<?php echo $prod_ctry?>" data-stock="<?php echo $prod_qty?>" data-price="<?php echo $price;?>" data-id="<?php echo $product_id; ?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
-								<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $product_id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
-                    		</td>
+							
 						</tr>
 						<?php }?>
 						<tr>

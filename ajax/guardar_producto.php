@@ -4,15 +4,14 @@
 	} elseif (!empty($_POST['name'])){
 	require_once ("../conexion.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-    $prod_code = mysqli_real_escape_string($con,(strip_tags($_POST["code"],ENT_QUOTES)));
-	$prod_name = mysqli_real_escape_string($con,(strip_tags($_POST["name"],ENT_QUOTES)));
-	$prod_ctry = mysqli_real_escape_string($con,(strip_tags($_POST["category"],ENT_QUOTES)));
-	$stock = intval($_POST["stock"]);
-	$price = floatval($_POST["price"]);
+    $prod_code = $_POST["code"];
+	$prod_name = $_POST["name"];
+	$prod_ctry = $_POST["category"];
+	$stock = $_POST["stock"];	
 	
 
 	// REGISTER data into database
-    $sql = "INSERT INTO tblprod(id, prod_code, prod_name, prod_ctry, prod_qty, price) VALUES (NULL,'$prod_code','$prod_name','$prod_ctry','$stock','$price')";
+    $sql = "INSERT INTO tblprod(id, prod_code, prod_name, prod_ctry, prod_qty) VALUES (NULL,'$prod_code','$prod_name','$prod_ctry','$stock')";
     $query = mysqli_query($con,$sql);
     // if product has been added successfully
     if ($query) {
